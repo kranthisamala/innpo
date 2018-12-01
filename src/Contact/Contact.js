@@ -46,7 +46,7 @@ const contact = (props) => {
                         <input type="text" className="form-control" placeholder="Full Name"/>
                         <input type="text" className="form-control" placeholder="Email address"/>
                         <input type="text" className="form-control" placeholder="Phone Number"/>
-                        <select class="form-control">
+                        <select className="form-control">
                             <option>select your country</option>
                             <option>2</option>
                             <option>3</option>

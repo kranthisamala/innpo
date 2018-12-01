@@ -1,9 +1,43 @@
-import React from 'react';
+import React ,{Component} from 'react';
 import classes from './Navigation.css';
 import './Navigation.css';
 import Carousel from '../Carousel/Carousel';
 
-const navigation = (props) => {
+const debounce = (func, wait) => {
+    let timeout
+    return (...args) => {
+      clearTimeout(timeout)
+      timeout = setTimeout(() => func.apply(this, args), wait)
+    }
+  }
+
+class navigation extends Component  {
+    constructor(props) {
+        super(props)
+        this.state = {
+          scrollPositionY: 0,
+        }
+      }
+      componentDidMount() {
+        // 32 is the number of milliseconds to debounce
+        // I picked this because it's approx 1 frame (ie: 16.7ms)
+        // You'll want to modulate that to your taste.
+        // Add console.logs in handleScroll function to check if its flooding.
+        return window.addEventListener('scroll', debounce(this.handleScroll, 16))
+      }
+      componentWillUnmount() {
+        return window.removeEventListener('scroll', debounce(this.handleScroll, 16))
+      }
+      handleScroll = () => {
+        // + is unary operator, same as Number(window.scrollY)
+        const scrollPositionY = +window.scrollY
+        return this.setState({ scrollPositionY })
+      }
+    render(){
+        let newClass =[];
+        if (this.state.scrollPositionY > 100){
+            newClass.push(classes.newNavBar);
+        }
     return(
         <>
             <Carousel/>
@@ -31,7 +65,7 @@ const navigation = (props) => {
                         </div>
                     </div>
                 </div>
-                <nav>
+                <nav className = {newClass.join(' ')}>
                     <ul>
                         <li>Home</li>
                         <li>About</li>
@@ -44,5 +78,6 @@ const navigation = (props) => {
         </>
         
     );
+}
 }
 export default navigation; 
