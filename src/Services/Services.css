@@ -1,0 +1,56 @@
+.servicesContainer{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: rgb(241, 241, 241);
+    
+}
+.overLapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* border: 1px solid black; */
+}
+.shape{
+    height: 100%;
+    width: 40%;
+    background-color: rgba(172, 172, 172, 0.575);
+    float: right;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(150px 0, 0 100%, 100% 100%, 100% 0);
+    background: linear-gradient(to bottom left, rgb(235, rgb(92, 92, 92)5), #86F7CC);
+}
+.innerServiceContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.serviceIconContainer{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 80%;
+    /* border: 1px solid black; */
+    margin-left: 100px;
+}
+.serviceIcon{
+    width: 100%;
+    height: 60%;
+    border: 1px solid black; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 10px;
+}
+.serviceDescription{
+    width: 100%;
+    height: 40%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+}

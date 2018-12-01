@@ -1,0 +1,40 @@
+.aboutContainer{
+    width: 80%;
+    margin: 530px auto 100px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 350px;
+    /* border: 1px solid black; */
+    
+    /* box-shadow:  1px 5px 28px #8888886c; */
+    border-radius: 7px;
+}
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+    /* border: 1px solid black; */
+    background-color: white;
+    box-shadow: 1px 5px 28px #8888886c;
+    border-radius: 7px;
+}
+.IconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    /* border: 1px solid black; */
+}
+.aboutText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    /* border: 1px solid black; */
+}
+.aboutText h5{
+    width: 80%;
+    text-align: center;
+}
