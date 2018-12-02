@@ -1,0 +1,17 @@
+.bgImage{
+    width: 100%;
+    top: 0;
+   left: 0;
+   position: absolute;
+   z-index: -100;
+}
+.titleContainer{
+   width: 100%;
+   height: 400px;
+   display: flex;
+   background-image: url(../../../src/assets/fullPageBG.jpg); 
+    padding-top: 250px; 
+   justify-content: center;
+}
+
+

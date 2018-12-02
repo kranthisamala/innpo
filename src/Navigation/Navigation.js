@@ -2,6 +2,7 @@ import React ,{Component} from 'react';
 import classes from './Navigation.css';
 import './Navigation.css';
 import Carousel from '../Carousel/Carousel';
+import {NavLink} from 'react-router-dom';
 
 const debounce = (func, wait) => {
     let timeout
@@ -40,7 +41,7 @@ class navigation extends Component  {
         }
     return(
         <>
-            <Carousel/>
+            {/* <Carousel/> */}
             <div className = {classes.topBar}>links for social networks go here</div>
             <div>
                 <div className="container" 
@@ -67,10 +68,10 @@ class navigation extends Component  {
                 </div>
                 <nav className = {newClass.join(' ')}>
                     <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Services</li>
-                        <li>Contact</li>
+                        <li><NavLink to = "/" activeClassName = {classes.active} exact >Home</NavLink> </li>
+                        <li><NavLink to = "/about" activeClassName = {classes.active} exact>About</NavLink> </li>
+                        <li><NavLink to = "/services" activeClassName = {classes.active} exact>Sevices</NavLink> </li>
+                        <li><NavLink to = "/contact" activeClassName = {classes.active} exact>Contact</NavLink> </li>
                         <li><button>Get a quote</button></li>
                     </ul>
                 </nav>
