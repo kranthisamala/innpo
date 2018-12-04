@@ -7,7 +7,7 @@ const welcome = () => {
                 <strong><p>Let's make a better Business</p></strong>
             </div>
             <div className = {classes.innerContainer}>
-                <strong><h2>Welcome to the <span style = {{color: 'rgb(0, 84, 158)'}}>TEAM</span></h2></strong>
+                <strong><h2>Welcome to the <strong><span style = {{color: 'rgb(0, 84, 158)'}}>TEAM</span></strong></h2></strong>
             </div>
             <br/>
             <div className = {classes.innerContainer}>

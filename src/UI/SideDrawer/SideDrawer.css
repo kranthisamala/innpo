@@ -1,0 +1,67 @@
+.SideDrawer{
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    max-width: 70%;
+    z-index: 200;
+    background-color: white;
+    padding: 32px 0px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+}
+
+@media (min-width: 500px){
+    .SideDrawer {
+        display: none;
+    }
+}
+
+.open{
+    transform: translateX(0);
+}
+.close{
+    transform: translateX(-100%);
+}
+
+
+@media (max-width: 500px){
+    .list {
+        /* background-color: aqua; */
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+    }
+    .listItem{
+        width: 100%;
+        /* border: 1px solid black; */
+        height: 50px;
+        display: flex;
+        padding: 12px 0px 0px 10px;
+        background-color: rgb(238, 238, 238);
+        border-bottom: 1px solid gray; 
+    }
+    .listItem a{
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        color: black;
+    }
+    .listItem a:hover{
+        text-decoration: none;
+        color: black;
+    }
+    .listItem:hover{
+        border-bottom: 4px solid gray;
+        color: black;
+    }
+    .logoItem{
+        margin: 30px auto;
+    }
+}
+
+
+

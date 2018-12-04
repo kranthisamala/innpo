@@ -3,6 +3,8 @@ import classes from './Navigation.css';
 import './Navigation.css';
 import Carousel from '../Carousel/Carousel';
 import {NavLink} from 'react-router-dom';
+import SideDrawer from '../UI/SideDrawer/SideDrawer';
+import BackDrop from '../UI/BackDrop/BackDrop';
 
 const debounce = (func, wait) => {
     let timeout
@@ -17,6 +19,8 @@ class navigation extends Component  {
         super(props)
         this.state = {
           scrollPositionY: 0,
+          showSideBar: false,
+          showBackDrop: false
         }
       }
       componentDidMount() {
@@ -34,6 +38,20 @@ class navigation extends Component  {
         const scrollPositionY = +window.scrollY
         return this.setState({ scrollPositionY })
       }
+
+      toggleSideBar = () => {
+          this.setState({
+              showSideBar: true,
+              showBackDrop: true
+          })
+      }
+      toggleBackDrop = () => {
+          this.setState({
+            showBackDrop: false,
+            showSideBar: false
+          })
+      }
+
     render(){
         let newClass =[];
         if (this.state.scrollPositionY > 100){
@@ -41,10 +59,12 @@ class navigation extends Component  {
         }
     return(
         <>
+            <SideDrawer open = {this.state.showSideBar} hideSideBar = {this.toggleBackDrop}/>
+            <BackDrop show = {this.state.showBackDrop} hideBackDrop = {this.toggleBackDrop}/>
             {/* <Carousel/> */}
             <div className = {classes.topBar}>links for social networks go here</div>
             <div>
-                <div className="container" 
+                {/* <div className="container" 
                      style = {{
                          padding: '10px'
                      }}>
@@ -65,14 +85,19 @@ class navigation extends Component  {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <nav className = {newClass.join(' ')}>
                     <ul>
-                        <li><NavLink to = "/" activeClassName = {classes.active} exact >Home</NavLink> </li>
-                        <li><NavLink to = "/about" activeClassName = {classes.active} exact>About</NavLink> </li>
-                        <li><NavLink to = "/services" activeClassName = {classes.active} exact>Sevices</NavLink> </li>
-                        <li><NavLink to = "/contact" activeClassName = {classes.active} exact>Contact</NavLink> </li>
-                        <li><button>Get a quote</button></li>
+                        <li><div className = {classes.toggler}
+                                    onClick = {this.toggleSideBar}
+                        ><div></div>
+                        <div></div>
+                        <div></div></div></li> 
+                        <li className = {classes.listItem}><NavLink to = "/" activeClassName = {classes.active} exact >Home</NavLink> </li>
+                        <li className = {classes.listItem}><NavLink to = "/about" activeClassName = {classes.active} exact>About</NavLink> </li>
+                        <li className = {classes.listItem}><NavLink to = "/services" activeClassName = {classes.active} exact>Sevices</NavLink> </li>
+                        <li className = {classes.listItem}><NavLink to = "/contact" activeClassName = {classes.active} exact>Contact</NavLink> </li>
+                        <li className = {classes.listItem}><button className = {classes.getQuoteButton}>Get a quote</button></li>
                     </ul>
                 </nav>
             </div>
