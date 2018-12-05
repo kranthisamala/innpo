@@ -38,3 +38,28 @@
     width: 80%;
     text-align: center;
 }
+
+@media(max-width: 500px){
+    .aboutContainer{
+        width: 80%;
+        margin: 30px auto 100px auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 850px;
+        /* border: 1px solid black; */
+        
+        /* box-shadow:  1px 5px 28px #8888886c; */
+        border-radius: 7px;
+    }
+    .contentContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* border: 1px solid black; */
+        background-color: white;
+        box-shadow: 1px 5px 28px #8888886c;
+        border-radius: 7px;
+    }
+}

@@ -4,3 +4,21 @@
    position: absolute;
    z-index: -100;
 }
+
+@media(max-width: 500px){
+   .carouselContainer{
+      top: 0;
+      left: 0;
+      position: relative;
+      z-index: -100;
+   }
+   .Carousel{
+      display: none;
+   }
+   .mobileContainer{
+      display: inline-block;
+      width: 100%;
+      height: 800px;
+      background-color: rgb(233, 233, 233);
+   }
+}

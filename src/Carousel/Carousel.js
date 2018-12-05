@@ -8,8 +8,13 @@ import classes from './Carousel.css'
 
 const carousel = (props) => {
     return (
-        <div>
-            <Carousel className = {classes.carouselContainer} controls = {false}>
+        <div className = {classes.carouselContainer} >
+            <div className = {classes.mobileContainer}>
+
+            </div>
+
+
+            <Carousel controls = {false} className = {classes.Carousel}>
                 <Carousel.Item>
                   <img alt="900x500" src={slide1} />
                   {/* <Carousel.Caption>
